@@ -1,0 +1,87 @@
+{
+  "manifest_version": 3,
+  "name": "快填助手",
+  "short_name": "快填助手",
+  "version": "2.1.2",
+  "description": "快速识别招聘表单，根据本地简历信息辅助填写求职申请。",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "xlsx.full.min.js",
+        "standard-resume.js",
+        "ui-state.js",
+        "resume-version-store.js",
+        "resume-editor-state.js",
+        "field-adapter.js",
+        "parsers/zip-reader.js",
+        "parsers/pdf-parser.js",
+        "parsers/docx-parser.js",
+        "parsers/resume-parser.js",
+        "fillers/value-normalizer.js",
+        "fillers/compatibility-metrics.js",
+      "fillers/web-field-aliases.js",
+      "fillers/dropdown-utils.js",
+      "fillers/control-adapter.js",
+      "fillers/control-detector.js",
+      "fillers/field-category.js",
+      "fillers/field-context.js",
+      "fillers/form-map.js",
+      "fillers/fill-validator.js",
+      "fillers/framework-adapters.js",
+      "fillers/dynamic-form-map.js",
+        "fillers/site-rules/generic-rules.js",
+        "fillers/site-rules/index.js",
+        "fillers/site-adapters/base-adapter.js",
+        "fillers/site-adapters/custom-select-adapter.js",
+        "fillers/site-adapters/searchable-select-adapter.js",
+        "fillers/site-adapters/cascader-adapter.js",
+        "fillers/site-adapters/date-picker-adapter.js",
+        "fillers/site-adapters/generic-adapter.js",
+        "fillers/site-adapters/registry.js",
+        "fillers/form-scanner.js",
+        "fillers/field-matcher.js",
+        "fillers/autofill-engine.js",
+        "panel-controller.js",
+        "content.js"
+      ],
+      "all_frames": false
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "vendor/pdfjs/pdf.mjs",
+        "vendor/pdfjs/pdf.worker.mjs",
+        "vendor/pdfjs/cmaps/*"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "快填助手",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

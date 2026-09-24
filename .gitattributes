@@ -1,0 +1,3 @@
+# Third-party distributions retain their original formatting.
+vendor/** -whitespace
+xlsx.full.min.js -whitespace

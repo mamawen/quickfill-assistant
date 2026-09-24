@@ -1,0 +1,20 @@
+# Browser and local extension state
+*.crx
+*.zip
+*.pem
+
+# Local test/runtime data
+node_modules/
+coverage/
+.DS_Store
+Thumbs.db
+
+# Never commit local resume exports or personal data
+*.xlsx
+*.xls
+*.csv
+*.pdf
+*.docx
+*.doc
+resume-*.json
+local-resume-*.json
